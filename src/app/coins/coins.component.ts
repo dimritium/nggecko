@@ -11,7 +11,8 @@ export class CoinsComponent implements OnInit {
 
   constructor( private stocksService: StocksService ) { }
 
-  coins = this.stocksService.getCoins().subscribe( d => this.coins = d )[0];
+  coins = this.stocksService.getCoins().subscribe( d => { this.coins = d; console.log(d); } )[0];
+  displayedColumns: String[] = ['name', 'market_data'];
 
   ngOnInit() {
   }

@@ -1,0 +1,9 @@
+table {
+    width: 100%;
+}
+
+.thumbnail {
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: bottom;
+}

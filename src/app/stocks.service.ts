@@ -17,5 +17,4 @@ export class StocksService {
   getCoins() {
       return ( this.http.get( this.api_url.concat('/coins') ) );
   }
-
 }

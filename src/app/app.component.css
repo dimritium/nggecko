@@ -1,0 +1,8 @@
+.main-content {
+    display: flex;
+}
+
+app-coins {
+    margin: 70px 10px;
+    width: 100%;
+}
