@@ -1,14 +1,39 @@
 <div *ngIf="coins !== undefined">
   <table mat-table [dataSource]="coins" class="mat-elevation-z8">
 
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let coin"><img src={{coin.image.thumb}} class="thumbnail"/> {{coin.name}} </td>
+    <ng-container matColumnDef="sno">
+      <th mat-header-cell *matHeaderCellDef> # </th>
+      <td mat-cell *matCellDef="let coin; let i = index;" width="1.5%"> {{i+1}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="market_data">
-      <th mat-header-cell *matHeaderCellDef> Price</th>
-      <td mat-cell *matCellDef="let coin"> {{ coin.market_data.current_price.usd | currency}} </td>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let coin" width=""><img src={{coin.image.thumb}} class="thumbnail"/> {{coin.name}} <span class="coin-id"> {{coin.symbol}} </span> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="curr_price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let coin"> {{ coin.market_data.current_price.usd | currency }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="per_chn_1h">
+      <th mat-header-cell *matHeaderCellDef> 1h </th>
+      <td mat-cell *matCellDef="let coin" [ngClass]="{'redtext': coin.market_data.price_change_percentage_1h_in_currency.usd < 0, 'greentext': coin.market_data.price_change_percentage_1h_in_currency.usd > 0}"> {{ coin.market_data.price_change_percentage_1h_in_currency.usd | number:'1.2-2' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="per_chn_24h">
+      <th mat-header-cell *matHeaderCellDef> 24h </th>
+      <td mat-cell *matCellDef="let coin" [ngClass]="{'redtext': coin.market_data.price_change_percentage_24h_in_currency.usd < 0, 'greentext': coin.market_data.price_change_percentage_24h_in_currency.usd > 0}"> {{ coin.market_data.price_change_percentage_24h_in_currency.usd | number:'1.2-2' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="per_chn_7d">
+      <th mat-header-cell *matHeaderCellDef> 7d </th>
+      <td mat-cell *matCellDef="let coin"  [ngClass]="{'redtext': coin.market_data.price_change_percentage_7d_in_currency.usd < 0, 'greentext': coin.market_data.price_change_percentage_7d_in_currency.usd > 0}"> {{ coin.market_data.price_change_percentage_7d_in_currency.usd | number:'1.2-2' }} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="mrk_cap">
+      <th mat-header-cell *matHeaderCellDef> Market Capital </th>
+      <td mat-cell *matCellDef="let coin"> {{ coin.market_data.market_cap.usd | currency }} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

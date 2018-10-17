@@ -7,3 +7,22 @@ table {
     margin-right: 5px;
     vertical-align: bottom;
 }
+
+.coin-id {
+    font-size: smaller;
+    margin-left: 8px;
+}
+
+.redtext {
+    color: red;
+    font-weight: 500;
+}
+
+.greentext {
+    color: green;
+    font-weight: 500;
+}
+
+.cdk-column-curr_price, .cdk-column-per_chn_1h, .cdk-column-per_chn_24h, .cdk-column-per_chn_7d, .cdk-column-mrk_cap {
+    text-align: right;
+}
