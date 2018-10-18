@@ -4,6 +4,7 @@ table {
 
 .thumbnail {
     height: 20px;
+    widows: 20px;
     margin-right: 5px;
     vertical-align: bottom;
 }
@@ -25,4 +26,13 @@ table {
 
 .cdk-column-curr_price, .cdk-column-per_chn_1h, .cdk-column-per_chn_24h, .cdk-column-per_chn_7d, .cdk-column-mrk_cap {
     text-align: right;
+    padding: 10px;
+}
+
+td.mat-cell {
+    padding: 0 5px;
+}
+
+.d-flex {
+    display: flex;
 }

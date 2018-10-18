@@ -5,4 +5,5 @@
 app-coins {
     margin: 70px 10px;
     width: 100%;
+    overflow: auto;
 }
