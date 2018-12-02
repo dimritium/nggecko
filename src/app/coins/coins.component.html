@@ -10,7 +10,8 @@
       <th mat-header-cell *matHeaderCellDef> Name </th>
       <td mat-cell *matCellDef="let coin" width="">
         <div class="d-flex">
-          <img src={{coin.image.thumb}} class="thumbnail"/> <span *ngIf="screen_width > 700"> {{coin.name}} </span> <span class="coin-id" > {{coin.symbol}} </span>
+          <img src={{coin.image.thumb}} class="thumbnail"/><a class="coins-id" [routerLink]="['/coins', coin.id]"
+          routerLinkActive="router-link-active"> <span *ngIf="screen_width > 700"> {{coin.name}} </span> <span class="coin-id" > {{coin.symbol}} </span> </a>
         </div>
       </td>
     </ng-container>

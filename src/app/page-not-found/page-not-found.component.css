@@ -1,0 +1,9 @@
+.error {
+    font-weight: bold;
+    font-size: 24px;
+    vertical-align: center;
+    position: absolute;
+    top: 50%;
+    left: 40%; 
+    font-family: cursive;
+}
