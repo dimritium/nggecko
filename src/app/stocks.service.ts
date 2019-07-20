@@ -18,6 +18,7 @@ export class StocksService {
       return ( this.http.get( this.api_url.concat('/coins') ) );
   }
   getCoinById(id: String) {
+    console.log( 'hooola');
     return ( this.http.get( this.api_url.concat('/coins/' + id )) );
   }
 }

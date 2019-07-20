@@ -1,6 +1,15 @@
 table {
     width: 100%;
-    margin: 0 10px;
+    margin: 0;
+}
+
+.coins-table {
+    padding: 0 15px 0 0px;
+}
+
+.price {
+    color: #ffdc73;
+    font-weight: 500;
 }
 
 .thumbnail {
@@ -25,7 +34,11 @@ table {
     font-weight: 500;
 }
 
-.cdk-column-curr_price, .cdk-column-per_chn_1h, .cdk-column-per_chn_24h, .cdk-column-per_chn_7d, .cdk-column-mrk_cap {
+.cdk-column-curr_price,
+.cdk-column-per_chn_1h,
+.cdk-column-per_chn_24h,
+.cdk-column-per_chn_7d,
+.cdk-column-mrk_cap {
     text-align: right;
     padding: 10px;
 }

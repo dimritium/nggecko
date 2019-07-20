@@ -8,19 +8,22 @@ import { StocksService } from '../stocks.service';
   templateUrl: './coin-detail.component.html',
   styleUrls: ['./coin-detail.component.css']
 })
+
 export class CoinDetailComponent implements OnInit {
-  coins$ = null;
+  coins$: any = {};
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private service: StocksService
-  ) { }
-
-  ngOnInit() {
-    this.coins$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap ) =>
-      this.service.getCoinById( params.get('id')))
-    );
+  ) {
+    this.coins$.service = service;
+    this.coins$.router = router;
+    this.coins$.service = service;
   }
 
+  ngOnInit() {
+    console.log(Object.keys(this.coins$.router));
+    console.log(this.coins$.router['navigationId']);
+  }
 }
