@@ -23,7 +23,5 @@ export class CoinDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(Object.keys(this.coins$.router));
-    console.log(this.coins$.router['navigationId']);
   }
 }
